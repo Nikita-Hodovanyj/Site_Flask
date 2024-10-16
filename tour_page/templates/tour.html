@@ -6,7 +6,17 @@
 
 
 {% block content %}
+  {% if tours %}
+    {% for tour in tours %}
+    <hr>
+      <h1><a href="{{ url_for ('tour.render_tour_info', id = tour.id) }}">{{ tour.title}}</a></h1>
+      <h3>{{ tour.price }}</h3>
+      <h2>{{ tour.country }}</h2>
+    <hr>
 
-  This is tour page
+
+    {% endfor %}
+
+  {% endif %}
 
 {% endblock %}
