@@ -5,12 +5,14 @@
 {% endblock %}
 
 {% block link %}
-<link rel="stylesheet" href="{{ url_for('static', filename = 'home.css') }}">
+<link rel="stylesheet" href="{{ url_for('home.static', filename = 'home.css') }}">
 {% endblock %}
 {% block content %}
     <a href="/user">User</a>
     <a href="/tour">Tour</a>
-<div> <button class = "comment">Написати відгук</button> </div>
+<div> 
+    <button class = "comment">Написати відгук</button> 
+</div>
     <div class="appearances" style="display: none;">
         <form method="post">
             <h1>Залиште свій відгук</h1>
@@ -22,8 +24,8 @@
             <textarea name="review" id="review"></textarea>
             <button type="submit">send feedback</button>
         </form>
-        
-        <script src="{{ url_for('static', filename='home.js') }}"></script>
-    </div> 
-
+    </div>   
+    <script src="{{ url_for('home.static', filename='home.js') }}"></script>
+    
+</div>
 {% endblock %}

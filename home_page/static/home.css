@@ -1,3 +1,38 @@
-.appearances .form{
-background-color: aquamarine;
+form{
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: 70%;
+    border-radius: 25px;
+    border: 3px solid black;
+    /* padding: 30px, 10px, 10px, 10px; */
+    gap: 16px;
+    margin-left: 35%;
+    margin-top: 5%;
 }
+form input , form textarea{
+    width: 50%;
+    border: 3px solid black;
+    height: 5%;
+    border-radius: 10px;
+}
+form button{
+    width: 20%;
+    height: 5%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.ccomment{
+    background-color: lightblue;
+    display: flex;
+    position: absolute;
+    margin-left: 50%;
+    position: relative; 
+    left: 100px;
+}
+   

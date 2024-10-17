@@ -9,7 +9,7 @@ project.config['MAIL_PORT'] = 587
 project.config['MAIL_USE_TLS'] = True
 project.config['MAIL_USE_SSL'] = False
 project.config['MAIL_USERNAME'] = "flasksite050807@gmail.com"
-project.config['MAIL_PASSWORD'] = 'Flasksite_050807_'
+project.config['MAIL_PASSWORD'] = ''
 project.config['MAIL_DEFAULT_SENDER'] = "flasksite050807@gmail.com"
 
 mail = flask_mail.Mail(app = project)

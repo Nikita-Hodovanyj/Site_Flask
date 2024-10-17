@@ -18,6 +18,9 @@ def render_home():
             recipients = [flask.request.form["email"]],
             body = f'Клієнт {data.name} залишив/ла Відгук{data.review}' 
         )
-        mail.send(msg)
-
+        # mail.send(msg)
+        try:
+            mail.send(msg) 
+        except:
+            print("Ошибка при отправке email")
     return flask.render_template(template_name_or_list = 'home.html' )
