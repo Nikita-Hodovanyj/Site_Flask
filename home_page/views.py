@@ -12,15 +12,15 @@ def render_home():
         )
         DB.session.add(data)
         DB.session.commit()
-        admin = "pilat050807@gmail.com"
+        admin = "flasksite050807@gmail.com"
         msg = Message(
             subject = f'Клієнт {data.name} {data.email}',
             recipients = [admin],
-            body = f'Клієнт {data.name} залишив/ла Відгук{data.review}' 
+            body = f'Клієнт {data.name} залишив/ла Відгук: \n\n\n{data.review}' 
         )
-        mail.send(msg)
-        # try:
-        #     mail.send(msg) 
-        # except:
-        #     print("Ошибка при отправке email")
+        # mail.send(msg)
+        try:
+            mail.send(msg) 
+        except:
+            return "Error sending email"
     return flask.render_template(template_name_or_list = 'home.html' )
