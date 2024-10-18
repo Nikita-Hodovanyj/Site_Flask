@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+  Welcome
+{% endblock %}
+
+{% block content %}
+
+  <h1>Welcome {{username}} </h1>
+
+  <form method="post" class = "logout-form">
+      <button type = "submit" name = "logout">Log out</button> 
+  </form>
+
+  
+{% endblock %}
