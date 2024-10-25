@@ -8,6 +8,7 @@ commentButton.addEventListener(
     listener = function(event){
         event.preventDefault()
         document.querySelector(".appearances").style.display = "block"
+        document.querySelector(".home").style.display = "none"
         console.log("jhgfhjgfhj")
     }
 )

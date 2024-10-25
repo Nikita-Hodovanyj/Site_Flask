@@ -8,24 +8,41 @@
 <link rel="stylesheet" href="{{ url_for('home.static', filename = 'home.css') }}">
 {% endblock %}
 {% block content %}
-    <a href="/user">User</a>
-    <!-- <a href="/tour">Tour</a> -->
-<div> 
-    <button class = "comment">Написати відгук</button> 
+<style>
+    body{
+    background-image: url(https://s3-alpha-sig.figma.com/img/91ff/f965/1014414e03f536acce47d7771a32a431?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DXENLFS3x~09KLvmJu6xVmHCWoVV0MUGarbXKG4l~bxG74aX9108Lfh7aacobWjaw1DXdghI2gWqrbm9CuIWyv8feYefvbTK9~ZHK9ZpKgFkbsoD9Pyx1BQWKGsn~BHJ20eckOPwxeYQuaCEOdASGHuf1NFMjIre5Y5w4dFshBxjHtAIqYYC05vxvb60BgKIvWEyi48mUtYTTRaLMy-rSXLJ7kQI~HFxBVUUYdmbEv1Gtq5n1lN4KQIpGFaf8OEWN7ki2fbn8mAeipR0VBOOJnvLC0wIY1ImaOZ4Yy4E3v9HrVcb3h7K6BHIuuuZptXwIrp~CjMGSUsLj7h8bCEvgQ__)
+    }
+</style>
+<header>
+    <div class = "link">
+        <a href="/user">User</a>
+    </div>
+    
+    <button class = "comment">Review</button> 
+</header>
+<div class="text">
+    <h1 class="home">This is the home page <br> of the tour agency</h1>
 </div>
+
+    <!-- <a href="/tour">Tour</a> -->
+    <!-- <div class="rectangle"></div> -->
+<!-- <div>  -->
+    
+<!-- </div> -->
     <div class="appearances" style="display: none;">
         <form method="post">
-            <h1>Залиште свій відгук</h1>
-            <label >Ім'я:</label>
+            <h1>Leave your feedback</h1>
+            <label >Name:</label>
             <input type="text" name = "name">
-            <label>Email</label>
+            <label>Email:</label>
             <input type="text" name = "email">
-            <label>Review</label>
+            <label>Review:</label>
             <textarea name="review" id="review"></textarea>
             <button type="submit">send feedback</button>
         </form>
     </div>   
     <script src="{{ url_for('home.static', filename='home.js') }}"></script>
+    <!-- <img src="{{url_for('home.static', filename = 'img.mountain.png')}}"> -->
     
 </div>
 {% endblock %}
