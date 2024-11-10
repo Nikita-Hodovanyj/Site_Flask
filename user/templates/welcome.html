@@ -5,13 +5,40 @@
   Welcome
 {% endblock %}
 
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('user_page.static', filename = 'welcome.css')}}">
+{% endblock %}
+
+
 {% block content %}
 
-  <h1>Welcome {{username}} </h1>
+    <header>
+        <div class = "logotype-panel">
+          <img class = "logotype" src="{{ url_for( 'tour.static', filename = 'images/LOGOTYPE.png' )}}">
+        </div>
 
-  <form method="post" class = "logout-form">
-      <button type = "submit" name = "logout">Log out</button> 
-  </form>
+        <div class = "links">
+            <a href="/">HOME</a>
+            <a href="/tour">TOUR</a>
+            {% if not current_user.is_authenticated %}
+                <a href = '/user' >USER</a>
+            {% else %}
+                <form method="post" class = "logout-form">
+                  <button type = "submit" class = "logout-link">LOG OUT</button> 
+                </form>
+            {% endif %}
 
+            
+        </div>
+
+    </header>
+
+    <div class = "welcome-content" >
+      <h1>WELCOME TO OUR WEBSITE, {{username}}!</h1>
+      <h2>TRAVEL & EXPLORE</h2>
+      <img class = "logotype" src="{{ url_for( 'user_page.static', filename = 'LOGOTYPE.png' )}}">
+    </div>
+
+    
   
 {% endblock %}

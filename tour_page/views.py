@@ -2,6 +2,7 @@ import flask, pandas, os
 from .models import Tour
 from main.settings import DATABASE
 from datetime import date
+from flask_login import current_user
 
 def render_tour():
   

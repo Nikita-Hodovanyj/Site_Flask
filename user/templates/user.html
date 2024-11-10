@@ -1,8 +1,13 @@
 {% extends "base.html" %}
 
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('user_page.static', filename = 'user.css') }}">
+{% endblock %}
+
 {% block title %}
     User
 {% endblock %}
+
 
 
 {% block content %}
@@ -18,7 +23,17 @@
     </form>
 
     {% endif %}
+    <header>
+        <div class="link1">
+            <a href="/">Home</a>
+        </div>
+    </header>
+    <div class="link2">
+        <a href="{{ url_for('user_page.render_registration') }}">Registration</a>
+        <a href="{{ url_for('user_page.render_login') }}">Login</a>
+    </div>
 
+    
 
 
 {% endblock %}
