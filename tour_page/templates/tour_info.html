@@ -1,11 +1,59 @@
 {% extends 'base.html' %}
 
+{% block title %}
+  {{ tour.title }}
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('tour.static', filename = 'css/tour_info.css')}}">
+{% endblock %}
+
+
 {% block content %}
-  <h1>{{ tour.title }}</h1>
-  <h5>{{ tour.date }}</h5>
-  <h4>{{ tour.country }}</h4>
-  <h2>{{ tour.price }}</h2>
-  <h3>{{ tour.description }}</h3>
+  <header>
+      <div class = "logotype-panel">
+          <img class = "logotype" src="{{ url_for( 'tour.static', filename = 'images/LOGOTYPE.png' )}}">
+      </div>
+
+      <div class = "links">
+          <a href="/">HOME</a>
+          <a href="/tour">TOUR</a>
+          {% if not is_authenticated %}
+            <a href = '/user' >USER</a>
+          {% else %}
+            <a href="/logout">LOG OUT</a>
+          {% endif %}
+      </div>
+
+  </header>
+
+  <div class = "tour-title">
+      <h1> {{ tour.title }}</h1>
+      <h2>{{ tour.price }}₴</h2>
+  </div>
+
+  <div class = "tour-content">
+      <img src = "{{ url_for( 'tour.static', filename = 'images/' + tour.image ) }}">
+    
+      <div class = "date">
+          <h3>Departure:  {{ tour.date }}</h3>
+      </div>
+      <hr>
+
+      <div class = "country">
+          <h3>Country:  {{ tour.country }}</h3>
+      </div>
+      <hr>
+
+      <div class = "description">
+          <h4>ABOUT TRIP</h4>
+          <h3>{{ tour.description }}</h3>
+      </div>
+    
+  </div>
+
+
+  
 
 
 {% endblock %}

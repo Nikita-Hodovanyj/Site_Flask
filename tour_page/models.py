@@ -7,6 +7,7 @@ class Tour(DATABASE.Model):
   date = DATABASE.Column(DATABASE.String(20), nullable = False)
   country = DATABASE.Column(DATABASE.String(30), nullable = False)
   price = DATABASE.Column(DATABASE.Integer, nullable = False)
+  image = DATABASE.Column(DATABASE.Text, nullable = False)
   description = DATABASE.Column(DATABASE.Text, nullable = False)
 
   def __repr__(self):

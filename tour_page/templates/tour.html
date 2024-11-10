@@ -4,25 +4,63 @@
   Tour
 {% endblock %}
 
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('tour.static', filename = 'css/tour.css')}}">
+{% endblock %}
+
+
 
 {% block content %}
+  <header>
+      <div class = "logotype-panel">
+        <img class = "logotype" src="{{ url_for( 'tour.static', filename = 'images/LOGOTYPE.png' )}}">
+      </div>
 
-  <a href="/">Home</a>
+      <div class = "links">
+        <a href="/">HOME</a>
+        {% if not is_authenticated %}
+          <a href = '/user' >USER</a>
+        {% else %}
+          <a href="/logout">LOG OUT</a>
+        {% endif %}
+      </div>
+    
+  </header>
+  
+
+  <div class = "all-tours">
+    <h1 >ALL TOURS →</h1>
+  </div>
+
+  <div class="wrapper">
+    <img src="{{ url_for ('tour.static', filename = 'images/main_image.jpg') }} " class="background-image">
+
+    <div class="tours-content">
+      {% if tours %}
+        {% for tour in tours %}
+          <div class = "tour-card">
+
+            <img src = "{{ url_for( 'tour.static', filename = 'images/' + tour.image ) }}">
+            
+            <div class = "tour-card-content">
+                <h1><a href="{{ url_for ('tour.render_tour_info', id = tour.id) }}">{{ tour.title}}</a></h1>
+                <h3>{{ tour.price }}₴</h3>
+                <h2>{{ tour.country }}</h2>
+            </div>
+
+          </div>
+          {% endfor %}
+
+        {% endif %}
+            
+    </div>
+
+  </div>
 
 
 
-  {% if tours %}
-    {% for tour in tours %}
-    <hr>
-      <h1><a href="{{ url_for ('tour.render_tour_info', id = tour.id) }}">{{ tour.title}}</a></h1>
-      <h3>{{ tour.price }}</h3>
-      <h2>{{ tour.country }}</h2>
-    <hr>
 
-
-    {% endfor %}
-
-  {% endif %}
+  
 
 
 {% endblock %}

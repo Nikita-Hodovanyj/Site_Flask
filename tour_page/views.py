@@ -7,10 +7,12 @@ def render_tour():
   
   if True:
     path_xlsx = os.path.abspath(__file__ + "/../tours_table.xlsx")
+
+
     read_xlsx = pandas.read_excel(
       io = path_xlsx,
       header = None,
-      names = ["title", "date", "country", "price", "description"]
+      names = ["title", "date", "country", "price", "image", "description"]
     )
     Tour.query.delete()
     print(read_xlsx)
@@ -21,6 +23,7 @@ def render_tour():
           date = row_data['date'].date(),
           country = row_data['country'],
           price = row_data['price'],
+          image = row_data['image'],
           description = row_data['description']
         )
         DATABASE.session.add(tour)
