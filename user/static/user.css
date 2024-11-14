@@ -19,20 +19,24 @@ body{
 
 
 
-header .link1 {
-    position: absolute;
-    right: 30px; 
-    top: 10px;  
-}
-
-header .link1 a {
+header .link a {
+    width: 112px;
+    height: 39px;
+    font-size: 42;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background-color: transparent;
+    border: none;
     color: white;
-    font-size: 55; 
+    cursor: pointer;
+    position: absolute;
+    margin-left: 90%;
     text-decoration: none;
+    margin-top: 15px;
     font-weight: bold;
     
 }
-
 
 
 

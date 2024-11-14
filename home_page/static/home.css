@@ -44,13 +44,14 @@ form label{
 }
 
 body{
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('image\ 12.png');
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    display: flex;
-    /* position: absolute; */
+    background-repeat: no-repeat;
+    margin: auto;
+    
 }
-
 header{
     position: fixed;
     top: 0;
